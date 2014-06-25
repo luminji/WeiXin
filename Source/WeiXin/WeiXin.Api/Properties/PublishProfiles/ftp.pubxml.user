@@ -14,22 +14,22 @@
       <publishTime>06/24/2014 15:04:40</publishTime>
     </File>
     <File Include="bin/WeiXin.Api.dll">
-      <publishTime>06/24/2014 17:37:00</publishTime>
+      <publishTime>06/25/2014 17:19:22</publishTime>
     </File>
     <File Include="bin/WeiXin.Config.dll">
-      <publishTime>06/24/2014 17:21:31</publishTime>
+      <publishTime>06/25/2014 17:19:21</publishTime>
     </File>
     <File Include="bin/WeiXin.Utilitys.dll">
-      <publishTime>06/24/2014 17:21:31</publishTime>
+      <publishTime>06/25/2014 17:19:21</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>06/24/2014 17:37:10</publishTime>
+      <publishTime>06/25/2014 17:19:33</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>06/24/2014 16:29:06</publishTime>
+      <publishTime>06/25/2014 17:19:30</publishTime>
     </File>
     <File Include="WeiXin.ashx">
-      <publishTime>06/24/2014 17:24:23</publishTime>
+      <publishTime>06/25/2014 08:12:53</publishTime>
     </File>
     <File Include="WeiXin.snk">
       <publishTime>06/24/2014 15:03:42</publishTime>
