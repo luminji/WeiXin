@@ -1,0 +1,4 @@
+E:\GitHub\WeiXin\Source\WeiXin\WeiXin.Utilitys\bin\Release\WeiXin.Utilitys.dll
+E:\GitHub\WeiXin\Source\WeiXin\WeiXin.Utilitys\bin\Release\WeiXin.Utilitys.pdb
+E:\GitHub\WeiXin\Source\WeiXin\WeiXin.Utilitys\obj\Release\WeiXin.Utilitys.dll
+E:\GitHub\WeiXin\Source\WeiXin\WeiXin.Utilitys\obj\Release\WeiXin.Utilitys.pdb

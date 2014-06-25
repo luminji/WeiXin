@@ -1,0 +1,10 @@
+E:\GitHub\WeiXin\Source\WeiXin\WeiXin.Api\bin\WeiXin.Api.dll.config
+E:\GitHub\WeiXin\Source\WeiXin\WeiXin.Api\bin\WeiXin.Api.dll
+E:\GitHub\WeiXin\Source\WeiXin\WeiXin.Api\bin\WeiXin.Api.pdb
+E:\GitHub\WeiXin\Source\WeiXin\WeiXin.Api\obj\Release\WeiXin.Api.csprojResolveAssemblyReference.cache
+E:\GitHub\WeiXin\Source\WeiXin\WeiXin.Api\obj\Release\WeiXin.Api.dll
+E:\GitHub\WeiXin\Source\WeiXin\WeiXin.Api\obj\Release\WeiXin.Api.pdb
+E:\GitHub\WeiXin\Source\WeiXin\WeiXin.Api\bin\WeiXin.Config.dll
+E:\GitHub\WeiXin\Source\WeiXin\WeiXin.Api\bin\WeiXin.Utilitys.dll
+E:\GitHub\WeiXin\Source\WeiXin\WeiXin.Api\bin\WeiXin.Config.pdb
+E:\GitHub\WeiXin\Source\WeiXin\WeiXin.Api\bin\WeiXin.Utilitys.pdb
