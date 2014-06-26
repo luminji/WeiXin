@@ -1,5 +1,0 @@
-E:\GitHub\WeiXin\Source\WeiXin\WeiXin.Utilitys\bin\Debug\WeiXin.Utilitys.dll
-E:\GitHub\WeiXin\Source\WeiXin\WeiXin.Utilitys\bin\Debug\WeiXin.Utilitys.pdb
-E:\GitHub\WeiXin\Source\WeiXin\WeiXin.Utilitys\obj\Debug\WeiXin.Utilitys.dll
-E:\GitHub\WeiXin\Source\WeiXin\WeiXin.Utilitys\obj\Debug\WeiXin.Utilitys.pdb
-E:\GitHub\WeiXin\Source\WeiXin\WeiXin.Utilitys\obj\Debug\WeiXin.Utilitys.csprojResolveAssemblyReference.cache

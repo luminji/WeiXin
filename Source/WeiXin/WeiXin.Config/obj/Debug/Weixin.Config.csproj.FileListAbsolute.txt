@@ -1,7 +1,0 @@
-E:\GitHub\WeiXin\Source\WeiXin\WeiXin.Config\bin\Debug\WeiXin.Config.dll
-E:\GitHub\WeiXin\Source\WeiXin\WeiXin.Config\bin\Debug\WeiXin.Config.pdb
-E:\GitHub\WeiXin\Source\WeiXin\WeiXin.Config\bin\Debug\WeiXin.Utilitys.dll
-E:\GitHub\WeiXin\Source\WeiXin\WeiXin.Config\bin\Debug\WeiXin.Utilitys.pdb
-E:\GitHub\WeiXin\Source\WeiXin\WeiXin.Config\obj\Debug\Weixin.Config.csprojResolveAssemblyReference.cache
-E:\GitHub\WeiXin\Source\WeiXin\WeiXin.Config\obj\Debug\WeiXin.Config.dll
-E:\GitHub\WeiXin\Source\WeiXin\WeiXin.Config\obj\Debug\WeiXin.Config.pdb
