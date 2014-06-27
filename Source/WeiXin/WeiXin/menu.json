@@ -1,0 +1,19 @@
+{
+    "button": [
+        {
+            "name": "菜单一", 
+            "sub_button": [
+                {
+                    "type": "click", 
+                    "name": "被动文本消息", 
+                    "key": "1"
+                }, 
+                {
+                    "type": "click", 
+                    "name": "被动图文消息", 
+                    "key": "2"
+                }
+            ]
+        }
+    ]
+}
