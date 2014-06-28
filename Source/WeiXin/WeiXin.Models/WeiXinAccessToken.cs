@@ -3,7 +3,7 @@ using System;
 
 namespace WeiXin.Models
 {
-    [DataField(true, "[dbo].[WeiXinAccessToken]")]
+    [DataField(true, "[dbo].[WeiXinAccessTokenTest]")]
     public class WeiXinAccessToken : IConvert
     {
         [UniqueDataField(true, "[AccessToken]")]

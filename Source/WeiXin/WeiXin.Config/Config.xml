@@ -6,10 +6,8 @@
       cptbtptpbcptdtptp
     </Token>
     <AppId>
-      wx477a3621fc60b3ea
     </AppId>
     <AppSecret>
-      9a18f011d2e8a771130af63804ffdaa9
     </AppSecret>
     <!--客服消息接口-->
     <WeiXinCustomerServiceApi>
@@ -32,7 +30,6 @@
   <!--数据库连接字符串-->
   <DataBase>
     <ConnectionString>
-      
     </ConnectionString>
   </DataBase>
 </ApplicationConfig>

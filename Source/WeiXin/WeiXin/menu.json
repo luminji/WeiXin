@@ -1,17 +1,77 @@
 {
     "button": [
         {
-            "name": "菜单一", 
+            "name": "菜单一",
             "sub_button": [
                 {
-                    "type": "click", 
-                    "name": "被动文本消息", 
+                    "type": "click",
+                    "name": "被动文本消息",
                     "key": "1"
-                }, 
+                },
                 {
-                    "type": "click", 
-                    "name": "被动图文消息", 
+                    "type": "click",
+                    "name": "被动单图文消息",
                     "key": "2"
+                },
+				{
+                    "type": "click",
+                    "name": "被动多图文消息",
+                    "key": "3"
+                },
+				{
+                    "type": "click",
+                    "name": "客服文本消息",
+                    "key": "4"
+                },
+				{
+                    "type": "click",
+                    "name": "客服单图文消息",
+                    "key": "5"
+                }
+            ]
+        },
+		{
+            "name": "菜单二",
+            "sub_button": [
+                {
+                    "type": "click",
+                    "name": "客服多图文消息",
+                    "key": "6"
+                },
+				{
+                    "type": "click",
+                    "name": "语音识别",
+                    "key": "7"
+                },
+				{
+                    "type": "view",
+                    "name": "打开网页",
+                    "url":"http://www.wangwenzhuang.com/"
+                },
+				{
+                    "type": "click",
+                    "name": "获取OpenId",
+                    "key":"8"
+                }
+            ]
+        },
+		{
+            "name": "关于源码",
+            "sub_button": [
+				{
+                    "type": "click",
+                    "name": "说明",
+                    "key": "11"
+                },
+                {
+                    "type": "click",
+                    "name": "获取源码",
+                    "key": "9"
+                },
+				{
+                    "type": "click",
+                    "name": "联系开发者",
+                    "key": "10"
                 }
             ]
         }

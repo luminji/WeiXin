@@ -40,7 +40,7 @@ namespace WeiXin.SendMessage
         [JsonProperty("url")]
         public string Url { get; set; }
         [JsonProperty("picurl")]
-        public string Picurl { get; set; }
+        public string PicUrl { get; set; }
 
         public string GetJson()
         {
@@ -57,9 +57,9 @@ namespace WeiXin.SendMessage
             {
                 result += "\"url\":\"" + HttpUtility.UrlDecode(Url) + "\",";
             }
-            if (!string.IsNullOrEmpty(Picurl))
+            if (!string.IsNullOrEmpty(PicUrl))
             {
-                result += "\"picurl\":\"" + HttpUtility.UrlDecode(Picurl) + "\",";
+                result += "\"picurl\":\"" + HttpUtility.UrlDecode(PicUrl) + "\",";
             }
             if (result.Length > 0)
             {

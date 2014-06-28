@@ -34,10 +34,6 @@ namespace WeiXin.ProcessMessages
             MessageFuncs.Add("9", Action9);
             MessageFuncs.Add("10", Action10);
             MessageFuncs.Add("11", Action11);
-            MessageFuncs.Add("12", Action12);
-            MessageFuncs.Add("13", Action13);
-            MessageFuncs.Add("14", Action14);
-            MessageFuncs.Add("15", Action15);
 
             Processs = new Dictionary<MessageType, ProcessMessage>();
             Processs.Add(MessageType.Event, new ProcessEventMessage());
@@ -108,84 +104,82 @@ namespace WeiXin.ProcessMessages
         }
         private static string Action1(Message receiveMsg)
         {
-            return MessageManager.CreateTextMessageXml(receiveMsg.Xml, "我是被动文本消息");
+            return MessageManager.CreateTextMessageXml(receiveMsg.Xml, "被动文本消息");
         }
         private static string Action2(Message receiveMsg)
         {
             var article = new List<WeiXin.Messages.Article>();
-            article.Add(new WeiXin.Messages.Article { Title = string.Format(MessageManager.MsgTag, "图文消息1"), Description = string.Format(MessageManager.MsgTag, "大图的格式为JPG、PNG，360*200，小图200*200。这里我随便指定的图片"), Picurl = string.Format(MessageManager.MsgTag, "http://a.hiphotos.baidu.com/image/pic/item/37d3d539b6003af352021be5372ac65c1138b6ff.jpg"), Url = string.Format(MessageManager.MsgTag, "http://www.wangwenzhuang.com/") });
-            article.Add(new WeiXin.Messages.Article { Title = string.Format(MessageManager.MsgTag, "图文消息2"), Description = string.Format(MessageManager.MsgTag, "大图的格式为JPG、PNG，360*200，小图200*200。这里我随便指定的图片"), Picurl = string.Format(MessageManager.MsgTag, "http://g.hiphotos.baidu.com/image/pic/item/55e736d12f2eb93895023c7fd7628535e4dd6fcb.jpg"), Url = string.Format(MessageManager.MsgTag, "http://www.wangwenzhuang.com/") });
+            article.Add(new WeiXin.Messages.Article { Title = string.Format(MessageManager.MsgTag, "被动单图文消息"), Description = string.Format(MessageManager.MsgTag, "被动单图文消息，此处省略一万字。。。"), PicUrl = string.Format(MessageManager.MsgTag, "http://h.hiphotos.baidu.com/image/pic/item/c9fcc3cec3fdfc037d970d53d63f8794a5c2266a.jpg"), Url = string.Format(MessageManager.MsgTag, "http://www.wangwenzhuang.com/") });
             return MessageManager.CreateNewsMessageXml(receiveMsg.Xml, article);
         }
         private static string Action3(Message receiveMsg)
         {
-            return MessageManager.CreateTextMessageXml(receiveMsg.Xml, NotImplementedMsg);
+            var article = new List<WeiXin.Messages.Article>();
+            article.Add(new WeiXin.Messages.Article { Title = string.Format(MessageManager.MsgTag, "被动多图文消息1"), Description = string.Format(MessageManager.MsgTag, "被动多图文消息，此处省略一万字。。。"), PicUrl = string.Format(MessageManager.MsgTag, "http://h.hiphotos.baidu.com/image/pic/item/c9fcc3cec3fdfc037d970d53d63f8794a5c2266a.jpg"), Url = string.Format(MessageManager.MsgTag, "http://www.wangwenzhuang.com/") });
+            article.Add(new WeiXin.Messages.Article { Title = string.Format(MessageManager.MsgTag, "被动多图文消息2"), Description = string.Format(MessageManager.MsgTag, "被动多图文消息，此处省略一万字。。。"), PicUrl = string.Format(MessageManager.MsgTag, "http://g.hiphotos.baidu.com/image/pic/item/55e736d12f2eb93895023c7fd7628535e4dd6fcb.jpg"), Url = string.Format(MessageManager.MsgTag, "http://www.wangwenzhuang.com/") });
+            article.Add(new WeiXin.Messages.Article { Title = string.Format(MessageManager.MsgTag, "被动多图文消息3"), Description = string.Format(MessageManager.MsgTag, "被动多图文消息，此处省略一万字。。。"), PicUrl = string.Format(MessageManager.MsgTag, "http://e.hiphotos.baidu.com/image/pic/item/63d0f703918fa0ec8426f0f7249759ee3c6ddb63.jpg"), Url = string.Format(MessageManager.MsgTag, "http://www.wangwenzhuang.com/") });
+            return MessageManager.CreateNewsMessageXml(receiveMsg.Xml, article);
         }
         private static string Action4(Message receiveMsg)
         {
-            return MessageManager.CreateTextMessageXml(receiveMsg.Xml, NotImplementedMsg);
+            Task t = new Task(() =>
+            {
+                var msg = new CustomerServiceTextMessage { Touser = receiveMsg.FromUserName, Content = "客服文本消息" };
+                SendCustomerServiceMessageManager.SendTextMessage(msg);
+            });
+            t.Start();
+            return string.Empty;
         }
         private static string Action5(Message receiveMsg)
         {
-            return MessageManager.CreateTextMessageXml(receiveMsg.Xml, NotImplementedMsg);
+            Task t = new Task(() =>
+            {
+                var title = "客服单图文消息";
+                var discription = "被动单图文消息，此处省略一万字。。。";
+                var url = "http://www.wangwenzhuang.com/";
+                var articles = new List<WeiXin.SendMessage.Article>();
+                articles.Add(new WeiXin.SendMessage.Article { Title = title, Description = discription, PicUrl = "http://h.hiphotos.baidu.com/image/pic/item/c9fcc3cec3fdfc037d970d53d63f8794a5c2266a.jpg", Url = url });
+                var msg = new CustomerServiceNewsMessage { Touser = receiveMsg.FromUserName, Articles = articles };
+                SendCustomerServiceMessageManager.SendNewsMessage(msg);
+            });
+            t.Start();
+            return string.Empty;
         }
         private static string Action6(Message receiveMsg)
         {
-            //Task t = new Task(() =>
-            //{
-            //    var discription = "图文消息";
-            //    var url = "http://www.wangwenzhuang.com/";
-            //    var articles = new List<WeiXin.SendMessage.Article>();
-            //    articles.Add(new WeiXin.SendMessage.Article { Title = "已申请的学分", Description = discription, Url = url });
-            //    var msg = new CustomerServiceNewsMessage { Touser = receiveMsg.FromUserName, Articles = articles };
-            //    SendCustomerServiceMessageManager.SendTextAndImageMessage(msg);
-            //});
-            //t.Start();
-            //return string.Empty;
-            return MessageManager.CreateTextMessageXml(receiveMsg.Xml, NotImplementedMsg);
+            Task t = new Task(() =>
+            {
+                var discription = "被动单图文消息，此处省略一万字。。。";
+                var url = "http://www.wangwenzhuang.com/";
+                var articles = new List<WeiXin.SendMessage.Article>();
+                articles.Add(new WeiXin.SendMessage.Article { Title = "客服多图文消息1", Description = discription, PicUrl = "http://h.hiphotos.baidu.com/image/pic/item/c9fcc3cec3fdfc037d970d53d63f8794a5c2266a.jpg", Url = url });
+                articles.Add(new WeiXin.SendMessage.Article { Title = "客服多图文消息2", Description = discription, PicUrl = "http://g.hiphotos.baidu.com/image/pic/item/55e736d12f2eb93895023c7fd7628535e4dd6fcb.jpg", Url = url });
+                articles.Add(new WeiXin.SendMessage.Article { Title = "客服多图文消息3", Description = discription, PicUrl = "http://e.hiphotos.baidu.com/image/pic/item/63d0f703918fa0ec8426f0f7249759ee3c6ddb63.jpg", Url = url });
+                var msg = new CustomerServiceNewsMessage { Touser = receiveMsg.FromUserName, Articles = articles };
+                SendCustomerServiceMessageManager.SendNewsMessage(msg);
+            });
+            t.Start();
+            return string.Empty;
         }
         private static string Action7(Message receiveMsg)
         {
-            //Task t = new Task(() =>
-            //{
-            //    var msg = new CustomerServiceTextMessage { Touser = receiveMsg.FromUserName, Content = string.Empty };
-            //    SendCustomerServiceMessageManager.SendTextMessage(msg);
-            //});
-            //t.Start();
-            //return string.Empty;
-            return MessageManager.CreateTextMessageXml(receiveMsg.Xml, NotImplementedMsg);
+            return MessageManager.CreateTextMessageXml(receiveMsg.Xml, "请说一段语音发来。");
         }
         private static string Action8(Message receiveMsg)
         {
-            return MessageManager.CreateTextMessageXml(receiveMsg.Xml, NotImplementedMsg);
+            return MessageManager.CreateTextMessageXml(receiveMsg.Xml, string.Format("<a href=\"http://58.215.139.6/testapi/test.html?openid={0}\">查看OpenId</a>", receiveMsg.FromUserName));
         }
         private static string Action9(Message receiveMsg)
         {
-            return MessageManager.CreateTextMessageXml(receiveMsg.Xml, NotImplementedMsg);
+            return MessageManager.CreateTextMessageXml(receiveMsg.Xml, "源码地址：<a href=\"https://github.com/WangWenzhuang/WeiXin\">https://github.com/WangWenzhuang/WeiXin</a>");
         }
         private static string Action10(Message receiveMsg)
         {
-            return MessageManager.CreateTextMessageXml(receiveMsg.Xml, NotImplementedMsg);
+            return MessageManager.CreateTextMessageXml(receiveMsg.Xml, "电子邮箱：1020304029@qq.com\r\nQQ：1020304029\r\n个人博客：<a href=\"http://www.wangwenzhuang.com/\">http://www.wangwenzhuang.com/</a>");
         }
         private static string Action11(Message receiveMsg)
         {
-            return MessageManager.CreateTextMessageXml(receiveMsg.Xml, NotImplementedMsg);
-        }
-        private static string Action12(Message receiveMsg)
-        {
-            return MessageManager.CreateTextMessageXml(receiveMsg.Xml, NotImplementedMsg);
-        }
-        private static string Action13(Message receiveMsg)
-        {
-            return MessageManager.CreateTextMessageXml(receiveMsg.Xml, NotImplementedMsg);
-        }
-        private static string Action14(Message receiveMsg)
-        {
-            return MessageManager.CreateTextMessageXml(receiveMsg.Xml, NotImplementedMsg);
-        }
-        private static string Action15(Message receiveMsg)
-        {
-            return MessageManager.CreateTextMessageXml(receiveMsg.Xml, NotImplementedMsg);
+            return MessageManager.CreateTextMessageXml(receiveMsg.Xml, "任何个人或团体都可以无限制的任意使用此源码。如果您用此源码可以得到额外的收入，请随便打赏我一点，谢谢。支付宝：wangwenzhuang@live.com");
         }
     }
 }

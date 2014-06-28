@@ -21,6 +21,6 @@ namespace WeiXin.Messages
         /// 语音识别结果
         /// </summary>
         [SendMessageProperty(false)]
-        public string Recongnition { get; set; }
+        public string Recognition { get; set; }
     }
 }

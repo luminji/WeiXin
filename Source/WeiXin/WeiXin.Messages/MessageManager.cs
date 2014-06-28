@@ -58,7 +58,7 @@ namespace WeiXin.Messages
             sendMsg.ToUserName = receiveMsg.FromUserName;
             sendMsg.FromUserName = receiveMsg.ToUserName;
             sendMsg.CreateTime = SignatureHelper.CreateTimestamp();
-            sendMsg.MsgType = ReflectionHelper.GetCustomAttribute<WXMsgTypeAttribute>(MessageType.Text).MsgType;
+            sendMsg.MsgType = string.Format(MessageManager.MsgTag,ReflectionHelper.GetCustomAttribute<WXMsgTypeAttribute>(MessageType.Text).MsgType);
             sendMsg.Content = string.Format(MessageManager.MsgTag, content);
             return MessageManager.ConvertToXml(sendMsg);
         }
@@ -72,7 +72,7 @@ namespace WeiXin.Messages
             sendMsg.ToUserName = receiveMsg.FromUserName;
             sendMsg.FromUserName = receiveMsg.ToUserName;
             sendMsg.CreateTime = SignatureHelper.CreateTimestamp();
-            sendMsg.MsgType = ReflectionHelper.GetCustomAttribute<WXMsgTypeAttribute>(MessageType.News).MsgType;
+            sendMsg.MsgType = string.Format(MessageManager.MsgTag,ReflectionHelper.GetCustomAttribute<WXMsgTypeAttribute>(MessageType.News).MsgType);
             sendMsg.Articles = articles;
             sendMsg.ArticleCount = sendMsg.Articles.Count;
             return MessageManager.ConvertToXml(sendMsg);

@@ -26,6 +26,6 @@ namespace WeiXin.Messages
         [SendMessageProperty(true)]
         public string Url { get; set; }
         [SendMessageProperty(true)]
-        public string Picurl { get; set; }
+        public string PicUrl { get; set; }
     }
 }

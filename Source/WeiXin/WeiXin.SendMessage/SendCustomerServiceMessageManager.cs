@@ -12,7 +12,7 @@ namespace WeiXin.SendMessage
         {
             SendMessage(msg.GetJson());
         }
-        public static void SendTextAndImageMessage(CustomerServiceNewsMessage msg)
+        public static void SendNewsMessage(CustomerServiceNewsMessage msg)
         {
             SendMessage(msg.GetJson());
         }

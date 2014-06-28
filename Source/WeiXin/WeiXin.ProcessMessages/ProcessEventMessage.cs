@@ -32,7 +32,7 @@ namespace WeiXin.ProcessMessages
             }
             else if (eventMsg.Event.Equals("LOCATION"))             // 上报地理位置时的事件
             {
-
+                result = MessageManager.CreateTextMessageXml(receiveMsg.Xml, string.Format("您的地理位置纬度：{0}，经度：{1}，精度：{2}", eventMsg.Latitude, eventMsg.Longitude, eventMsg.Precision));
             }
             else if (eventMsg.Event.Equals("subscribe"))            // 进行关注的事件
             {
@@ -47,7 +47,6 @@ namespace WeiXin.ProcessMessages
                 result = ProcessMessageManager.NotProcess(receiveMsg.Xml);
             }
             return result;
-
         }
     }
 }
