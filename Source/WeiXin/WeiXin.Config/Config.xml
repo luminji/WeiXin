@@ -21,6 +21,18 @@
     <WeiXinAccessTokenApi>
       https://api.weixin.qq.com/cgi-bin/token
     </WeiXinAccessTokenApi>
+    <!--获取已关注用户列表-->
+    <WeiXinGetUserListApi>
+      https://api.weixin.qq.com/cgi-bin/user/get
+    </WeiXinGetUserListApi>
+    <!--获取已关注用户基本信息-->
+    <WeiXinGetUserInfoApi>
+      https://api.weixin.qq.com/cgi-bin/user/info
+    </WeiXinGetUserInfoApi>
+    <!--高级群发接口-->
+    <WeiXinAdvancedMassApi>
+      https://api.weixin.qq.com/cgi-bin/message/mass/send
+    </WeiXinAdvancedMassApi>
     <!--更新配置，值：
     true：微信客户端所有操作会显示系统维护升级中
     false:正常使用

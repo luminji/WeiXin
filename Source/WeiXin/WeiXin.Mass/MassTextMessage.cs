@@ -1,13 +1,13 @@
 ﻿using System.Web;
-using WeiXin.Attributes.SendMessage;
+using WeiXin.Attributes;
 
-namespace WeiXin.SendMessage
+namespace WeiXin.Mass
 {
-    public class CustomerServiceTextMessage : CustomerServiceMessage
+    public class MassTextMessage : MassMessage
     {
-        public CustomerServiceTextMessage()
+        public MassTextMessage()
         {
-            this.MsgType = CustomerServiceMessageType.Text;
+            this.MsgType = MassMessageType.Text;
         }
 
         [JsonProperty("content")]

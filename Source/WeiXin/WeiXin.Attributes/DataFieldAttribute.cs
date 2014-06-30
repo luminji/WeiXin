@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WeiXin.Attributes.Models
+namespace WeiXin.Attributes
 {
     /// <summary>
     /// 用于描述属性是否是数据库字段

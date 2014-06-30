@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using WeiXin.Attributes;
-using WeiXin.Attributes.Messages;
 using WeiXin.Utilitys;
 
 namespace WeiXin.Messages

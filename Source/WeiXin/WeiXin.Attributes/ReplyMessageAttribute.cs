@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WeiXin.Attributes.Messages
+namespace WeiXin.Attributes
 {
     /// <summary>
     /// 用于描述消息类型是否需要回复

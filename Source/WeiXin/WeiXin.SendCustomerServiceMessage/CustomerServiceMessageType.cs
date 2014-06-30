@@ -1,6 +1,6 @@
-﻿using WeiXin.Attributes.SendMessage;
+﻿using WeiXin.Attributes;
 
-namespace WeiXin.SendMessage
+namespace WeiXin.SendCustomerServiceMessage
 {
     /// <summary>
     /// 客服消息类型

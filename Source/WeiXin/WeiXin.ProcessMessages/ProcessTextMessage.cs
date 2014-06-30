@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using WeiXin.Config;
-using WeiXin.DAL;
-using WeiXin.Messages;
-using WeiXin.SendMessage;
+﻿using WeiXin.Messages;
 
 namespace WeiXin.ProcessMessages
 {

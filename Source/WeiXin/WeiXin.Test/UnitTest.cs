@@ -1,9 +1,6 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Diagnostics;
-using WeiXin.Utilitys;
-using System.Threading;
-using WeiXin.Messages;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using WeiXin.Mass;
+using WeiXin.UserManager;
 
 namespace WeiXin.Test
 {
@@ -13,6 +10,7 @@ namespace WeiXin.Test
         [TestMethod]
         public void TestMethod()
         {
+            var obj = WeiXinUserManager.GetUserInfo("oxhAYuPP7QcvPBq33dXs9f8Kvo2Y");
         }
     }
 }

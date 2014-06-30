@@ -1,5 +1,4 @@
 ﻿using WeiXin.Messages;
-using WeiXin.Utilitys;
 
 namespace WeiXin.ProcessMessages
 {

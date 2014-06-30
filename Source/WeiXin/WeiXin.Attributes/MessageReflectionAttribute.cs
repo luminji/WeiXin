@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WeiXin.Attributes.Messages
+namespace WeiXin.Attributes
 {
     /// <summary>
     /// 用于描述消息类型对应的消息实体

@@ -7,8 +7,8 @@
     <ProjectGuid>{878B4EAD-395A-42A9-9564-6668D2DE78CC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WeiXin.SendMessage</RootNamespace>
-    <AssemblyName>WeiXin.SendMessage</AssemblyName>
+    <RootNamespace>WeiXin.SendCustomerServiceMessage</RootNamespace>
+    <AssemblyName>WeiXin.SendCustomerServiceMessage</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

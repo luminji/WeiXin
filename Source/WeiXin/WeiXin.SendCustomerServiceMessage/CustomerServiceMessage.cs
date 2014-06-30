@@ -1,7 +1,7 @@
-﻿using WeiXin.Attributes.SendMessage;
+﻿using WeiXin.Attributes;
 using WeiXin.Utilitys;
 
-namespace WeiXin.SendMessage
+namespace WeiXin.SendCustomerServiceMessage
 {
     public abstract class CustomerServiceMessage
     {

@@ -16,7 +16,7 @@ namespace WeiXin.Utilitys
     {
         private static string Http_ForamtByJson(string url, string method = "GET", string json = null)
         {
-            var request = WebRequest.Create(url);
+            var request = HttpWebRequest.Create(url);
             request.Method = method;
             request.Timeout = 600000;
             request.ContentType = "application/json";
@@ -56,7 +56,7 @@ namespace WeiXin.Utilitys
 
         public static string HttpRequest(string url, string method = "GET", string data = null)
         {
-            var request = WebRequest.Create(url);
+            var request = HttpWebRequest.Create(url);
             request.Method = method;
             request.Timeout = 600000;
 

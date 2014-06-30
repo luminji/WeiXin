@@ -17,7 +17,7 @@ namespace WeiXin.DAL
             {
                 try
                 {
-                    sql = "update WeiXinAccessToken set AccessToken=@AccessToken,ExpiresIn=@ExpiresIn,LastGetDatetime=@LastGetDatetime;";
+                    sql = "update WeiXinAccessTokenTest set AccessToken=@AccessToken,ExpiresIn=@ExpiresIn,LastGetDatetime=@LastGetDatetime;";
                     result = SqlHelper.ExecuteNonQuery(CommandType.Text, sql, new SqlParameter("@AccessToken", model.AccessToken), new SqlParameter("@ExpiresIn", model.ExpiresIn), new SqlParameter("@LastGetDatetime", model.LastGetDatetime)) > 0;
                 }
                 catch (Exception e)

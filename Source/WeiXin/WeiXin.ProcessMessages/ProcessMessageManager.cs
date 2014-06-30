@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using WeiXin.Attributes.Messages;
+using WeiXin.Attributes;
 using WeiXin.Config;
-using WeiXin.DAL;
 using WeiXin.Messages;
-using WeiXin.Models;
-using WeiXin.SendMessage;
+using WeiXin.SendCustomerServiceMessage;
+using WeiXin.UserManager;
 using WeiXin.Utilitys;
 
 namespace WeiXin.ProcessMessages
@@ -34,6 +33,7 @@ namespace WeiXin.ProcessMessages
             MessageFuncs.Add("9", Action9);
             MessageFuncs.Add("10", Action10);
             MessageFuncs.Add("11", Action11);
+            MessageFuncs.Add("12", Action12);
 
             Processs = new Dictionary<MessageType, ProcessMessage>();
             Processs.Add(MessageType.Event, new ProcessEventMessage());
@@ -137,8 +137,8 @@ namespace WeiXin.ProcessMessages
                 var title = "客服单图文消息";
                 var discription = "被动单图文消息，此处省略一万字。。。";
                 var url = "http://www.wangwenzhuang.com/";
-                var articles = new List<WeiXin.SendMessage.Article>();
-                articles.Add(new WeiXin.SendMessage.Article { Title = title, Description = discription, PicUrl = "http://h.hiphotos.baidu.com/image/pic/item/c9fcc3cec3fdfc037d970d53d63f8794a5c2266a.jpg", Url = url });
+                var articles = new List<WeiXin.SendCustomerServiceMessage.Article>();
+                articles.Add(new WeiXin.SendCustomerServiceMessage.Article { Title = title, Description = discription, PicUrl = "http://h.hiphotos.baidu.com/image/pic/item/c9fcc3cec3fdfc037d970d53d63f8794a5c2266a.jpg", Url = url });
                 var msg = new CustomerServiceNewsMessage { Touser = receiveMsg.FromUserName, Articles = articles };
                 SendCustomerServiceMessageManager.SendNewsMessage(msg);
             });
@@ -151,10 +151,10 @@ namespace WeiXin.ProcessMessages
             {
                 var discription = "被动单图文消息，此处省略一万字。。。";
                 var url = "http://www.wangwenzhuang.com/";
-                var articles = new List<WeiXin.SendMessage.Article>();
-                articles.Add(new WeiXin.SendMessage.Article { Title = "客服多图文消息1", Description = discription, PicUrl = "http://h.hiphotos.baidu.com/image/pic/item/c9fcc3cec3fdfc037d970d53d63f8794a5c2266a.jpg", Url = url });
-                articles.Add(new WeiXin.SendMessage.Article { Title = "客服多图文消息2", Description = discription, PicUrl = "http://g.hiphotos.baidu.com/image/pic/item/55e736d12f2eb93895023c7fd7628535e4dd6fcb.jpg", Url = url });
-                articles.Add(new WeiXin.SendMessage.Article { Title = "客服多图文消息3", Description = discription, PicUrl = "http://e.hiphotos.baidu.com/image/pic/item/63d0f703918fa0ec8426f0f7249759ee3c6ddb63.jpg", Url = url });
+                var articles = new List<WeiXin.SendCustomerServiceMessage.Article>();
+                articles.Add(new WeiXin.SendCustomerServiceMessage.Article { Title = "客服多图文消息1", Description = discription, PicUrl = "http://h.hiphotos.baidu.com/image/pic/item/c9fcc3cec3fdfc037d970d53d63f8794a5c2266a.jpg", Url = url });
+                articles.Add(new WeiXin.SendCustomerServiceMessage.Article { Title = "客服多图文消息2", Description = discription, PicUrl = "http://g.hiphotos.baidu.com/image/pic/item/55e736d12f2eb93895023c7fd7628535e4dd6fcb.jpg", Url = url });
+                articles.Add(new WeiXin.SendCustomerServiceMessage.Article { Title = "客服多图文消息3", Description = discription, PicUrl = "http://e.hiphotos.baidu.com/image/pic/item/63d0f703918fa0ec8426f0f7249759ee3c6ddb63.jpg", Url = url });
                 var msg = new CustomerServiceNewsMessage { Touser = receiveMsg.FromUserName, Articles = articles };
                 SendCustomerServiceMessageManager.SendNewsMessage(msg);
             });
@@ -180,6 +180,43 @@ namespace WeiXin.ProcessMessages
         private static string Action11(Message receiveMsg)
         {
             return MessageManager.CreateTextMessageXml(receiveMsg.Xml, "任何个人或团体都可以无限制的任意使用此源码。如果您用此源码可以得到额外的收入，请随便打赏我一点，谢谢。支付宝：wangwenzhuang@live.com");
+        }
+        private static string Action12(Message receiveMsg)
+        {
+            Task t = new Task(() =>
+            {
+                // 获取已关注列表
+                var openIds = WeiXinUserManager.GetUserList();
+                if (openIds != null && openIds.Count > 0)
+                {
+                    var title = "已关注用户";
+                    var discription = string.Empty;
+                    var url = "http://www.wangwenzhuang.com/";
+                    // 获取已关注列表每个人的基本信息
+                    foreach (var opendId in openIds)
+                    {
+                        var userInfo = WeiXinUserManager.GetUserInfo(opendId);
+                        discription += string.Format("subscribe：{0}\r\n", userInfo.Subscribe);
+                        discription += string.Format("openid：{0}\r\n", userInfo.OpenId);
+                        discription += string.Format("nickname：{0}\r\n", userInfo.NickName);
+                        discription += string.Format("sex：{0}\r\n", userInfo.Sex);
+                        discription += string.Format("language：{0}\r\n", userInfo.Language);
+                        discription += string.Format("city：{0}\r\n", userInfo.City);
+                        discription += string.Format("province：{0}\r\n", userInfo.Province);
+                        discription += string.Format("country：{0}\r\n", userInfo.Country);
+                        discription += string.Format("headimgurl：{0}\r\n", userInfo.HeadImgUrl);
+                        discription += string.Format("subscribe_time：{0}\r\n", userInfo.SubscribeTime);
+                        discription += string.Format("remark：{0}", userInfo.Remark);
+                        discription += "\r\n\r\n";
+                    }
+                    var articles = new List<WeiXin.SendCustomerServiceMessage.Article>();
+                    articles.Add(new WeiXin.SendCustomerServiceMessage.Article { Title = title, Description = discription, Url = url });
+                    var msg = new CustomerServiceNewsMessage { Touser = receiveMsg.FromUserName, Articles = articles };
+                    SendCustomerServiceMessageManager.SendNewsMessage(msg);
+                }
+            });
+            t.Start();
+            return string.Empty;
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WeiXin.Models;
+using WeiXin.UserManager;
 using WeiXin.Utilitys;
 
 namespace WeiXin.Test.WeiXin.Utilitys
@@ -54,6 +55,15 @@ namespace WeiXin.Test.WeiXin.Utilitys
             Assert.IsNotNull(result);
             Assert.AreEqual<int>(result.Count, 2);
             Assert.AreEqual<string>(result[1].AccessToken, "ACCESS_TOKEN2");
+        }
+
+        [TestMethod]
+        public void TestConvertJsonStringToObjectByJsonPropertyAttribute()
+        {
+            var json = "{\"subscribe\":1,\"openid\":\"oxhAYuPP7QcvPBq33dXs9f8Kvo2Y\",\"nickname\":\"王文壮\",\"sex\":1,\"language\":\"zh_CN\",\"city\":\"白山\",\"province\":\"吉林\",\"country\":\"中国\",\"headimgurl\":\"http://wx.qlogo.cn/mmopen/cjmq2iaVRZDXFNCWxV27YyW0q0cqnbhTPDibkDibapkmutfYD4RiaG7aKN9oOztXG9SY2yB3roSComjIVE95S4RJOQ/0\",\"subscribe_time\":1403936603,\"remark\":\"\"}";
+            var result = JsonSerializerHelper.ConvertJsonStringToObjectByJsonPropertyAttribute<UserInfo>(json);
+            Assert.IsNotNull(result);
+            Assert.AreEqual<string>(result.NickName, "王文壮");
         }
     }
 }

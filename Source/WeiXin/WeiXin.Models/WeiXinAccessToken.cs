@@ -1,5 +1,5 @@
-﻿using WeiXin.Attributes.Models;
-using System;
+﻿using System;
+using WeiXin.Attributes;
 
 namespace WeiXin.Models
 {

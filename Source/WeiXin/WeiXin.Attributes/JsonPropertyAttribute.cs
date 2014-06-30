@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WeiXin.Attributes.SendMessage
+namespace WeiXin.Attributes
 {
     /// <summary>
     /// 用于描述属性对应的客服消息 json 属性

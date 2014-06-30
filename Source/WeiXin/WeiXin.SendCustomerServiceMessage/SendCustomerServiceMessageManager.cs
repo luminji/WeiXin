@@ -4,7 +4,7 @@ using WeiXin.AccessToken;
 using WeiXin.Config;
 using WeiXin.Utilitys;
 
-namespace WeiXin.SendMessage
+namespace WeiXin.SendCustomerServiceMessage
 {
     public sealed class SendCustomerServiceMessageManager
     {

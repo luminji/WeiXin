@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WeiXin.Attributes.Messages
+namespace WeiXin.Attributes
 {
     /// <summary>
     /// 用于描述此属性是否是发送消息的必要属性

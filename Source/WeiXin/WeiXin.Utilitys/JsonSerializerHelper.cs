@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Reflection;
 using System.Web.Script.Serialization;
+using WeiXin.Attributes;
 
 namespace WeiXin.Utilitys
 {
@@ -33,6 +35,26 @@ namespace WeiXin.Utilitys
         {
             var jss = new JavaScriptSerializer();
             return jss.Deserialize<IList<T>>(jsonStr);
+        }
+
+        public static T ConvertJsonStringToObjectByJsonPropertyAttribute<T>(string json) where T : class,new()
+        {
+            T obj = new T();
+            var objType = typeof(T);
+            var tmpPros = objType.GetProperties();
+            var jsonObj = Deserialize(json);
+            foreach (var p in tmpPros)
+            {
+                var attribute = p.GetCustomAttribute<JsonPropertyAttribute>();
+                if (attribute != null)
+                {
+                    if (jsonObj.ContainsKey(attribute.PropertyName))
+                    {
+                        p.SetValue(obj, jsonObj[attribute.PropertyName]);
+                    }
+                }
+            }
+            return obj;
         }
     }
 }

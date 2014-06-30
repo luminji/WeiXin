@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Reflection;
-using WeiXin.Attributes.Models;
+using WeiXin.Attributes;
 
 namespace WeiXin.Models
 {

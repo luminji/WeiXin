@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
-using WeiXin.SendMessage;
+using WeiXin.SendCustomerServiceMessage;
 using WeiXin.Utilitys;
 
 namespace WeiXin.Test.WeiXin.SendMessage

@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using WeiXin.Attributes.Messages;
+using WeiXin.Attributes;
 using WeiXin.Messages;
 using WeiXin.Utilitys;
 

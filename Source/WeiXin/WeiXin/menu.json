@@ -52,6 +52,11 @@
                     "type": "click",
                     "name": "获取OpenId",
                     "key":"8"
+                },
+				{
+                    "type": "click",
+                    "name": "已关注用户信息",
+                    "key":"12"
                 }
             ]
         },

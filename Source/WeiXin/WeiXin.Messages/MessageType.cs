@@ -1,5 +1,4 @@
 ﻿using WeiXin.Attributes;
-using WeiXin.Attributes.Messages;
 
 namespace WeiXin.Messages
 {

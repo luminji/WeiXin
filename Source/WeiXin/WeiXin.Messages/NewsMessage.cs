@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using WeiXin.Attributes.Messages;
+using WeiXin.Attributes;
 
 namespace WeiXin.Messages
 {

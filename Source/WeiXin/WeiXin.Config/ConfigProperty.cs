@@ -63,6 +63,30 @@ namespace WeiXin.Config
                 return _WeiXin_AccessTokenApi;
             }
         }
+        private static string _WeiXin_GetUserListApi;
+        public static string WeiXin_GetUserListApi
+        {
+            get
+            {
+                return _WeiXin_GetUserListApi;
+            }
+        }
+        private static string _WeiXin_GetUserInfoApi;
+        public static string WeiXin_GetUserInfoApi
+        {
+            get
+            {
+                return _WeiXin_GetUserInfoApi;
+            }
+        }
+        private static string _WeiXin_AdvancedMassApi;
+        public static string WeiXin_AdvancedMassApi
+        {
+            get
+            {
+                return _WeiXin_AdvancedMassApi;
+            }
+        }
         private static bool _WeiXin_UpdateEnable;
         public static bool WeiXin_UpdateEnable
         {
@@ -207,6 +231,54 @@ namespace WeiXin.Config
                                 {
                                     _IsConfigurationOk = false;
                                     LogHelper.Log("缺少 WeiXin>WeiXinAccessTokenApi 配置");
+                                }
+                            }
+
+                            var getUserListApiElement = weiXinElement.Element("WeiXinGetUserListApi");
+                            if (getUserListApiElement == null)
+                            {
+                                _IsConfigurationOk = false;
+                                LogHelper.Log("缺少 WeiXin>WeiXinGetUserListApi 配置");
+                            }
+                            else
+                            {
+                                _WeiXin_GetUserListApi = getUserListApiElement.Value.Trim();
+                                if (string.IsNullOrEmpty(_WeiXin_GetUserListApi))
+                                {
+                                    _IsConfigurationOk = false;
+                                    LogHelper.Log("缺少 WeiXin>WeiXinGetUserListApi 配置");
+                                }
+                            }
+
+                            var getUserInfoApiElement = weiXinElement.Element("WeiXinGetUserInfoApi");
+                            if (getUserInfoApiElement == null)
+                            {
+                                _IsConfigurationOk = false;
+                                LogHelper.Log("缺少 WeiXin>WeiXinGetUserInfoApi 配置");
+                            }
+                            else
+                            {
+                                _WeiXin_GetUserInfoApi = getUserInfoApiElement.Value.Trim();
+                                if (string.IsNullOrEmpty(_WeiXin_GetUserInfoApi))
+                                {
+                                    _IsConfigurationOk = false;
+                                    LogHelper.Log("缺少 WeiXin>WeiXinGetUserInfoApi 配置");
+                                }
+                            }
+
+                            var advancedMassApiElement = weiXinElement.Element("WeiXinAdvancedMassApi");
+                            if (advancedMassApiElement == null)
+                            {
+                                _IsConfigurationOk = false;
+                                LogHelper.Log("缺少 WeiXin>WeiXinAdvancedMassApi 配置");
+                            }
+                            else
+                            {
+                                _WeiXin_AdvancedMassApi = advancedMassApiElement.Value.Trim();
+                                if (string.IsNullOrEmpty(_WeiXin_AdvancedMassApi))
+                                {
+                                    _IsConfigurationOk = false;
+                                    LogHelper.Log("缺少 WeiXin>WeiXinAdvancedMassApi 配置");
                                 }
                             }
 

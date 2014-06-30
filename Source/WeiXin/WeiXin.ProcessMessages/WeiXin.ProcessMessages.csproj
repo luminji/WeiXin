@@ -78,9 +78,13 @@
       <Project>{32f8711a-8e49-4cbe-b3eb-883fd381cd1a}</Project>
       <Name>WeiXin.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WeiXin.SendMessage\WeiXin.SendMessage.csproj">
+    <ProjectReference Include="..\WeiXin.SendCustomerServiceMessage\WeiXin.SendCustomerServiceMessage.csproj">
       <Project>{878b4ead-395a-42a9-9564-6668d2de78cc}</Project>
-      <Name>WeiXin.SendMessage</Name>
+      <Name>WeiXin.SendCustomerServiceMessage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WeiXin.UserManager\WeiXin.UserManager.csproj">
+      <Project>{e4ccde9d-63db-466b-a991-090a88f0d6f8}</Project>
+      <Name>WeiXin.UserManager</Name>
     </ProjectReference>
     <ProjectReference Include="..\WeiXin.Utilitys\WeiXin.Utilitys.csproj">
       <Project>{f7a31797-d3aa-45ce-b8a3-2eac2db0bd98}</Project>

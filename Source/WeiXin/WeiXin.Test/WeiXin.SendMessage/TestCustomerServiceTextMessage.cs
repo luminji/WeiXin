@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using WeiXin.SendMessage;
+using WeiXin.SendCustomerServiceMessage;
 using WeiXin.Utilitys;
 
 namespace WeiXin.Test.WeiXin.SendMessage
