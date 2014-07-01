@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的常规信息通过以下
 // 特性集控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("WeiXin.DAL")]
+[assembly: AssemblyTitle("WeiXin.GlobalReturnCode")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("WeiXin.DAL")]
+[assembly: AssemblyProduct("WeiXin.GlobalReturnCode")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("5fc49a94-f644-44f6-b479-f109489d4f90")]
+[assembly: Guid("69dc32b0-e117-4df3-aebf-d4ffcb47a6ef")]
 
 // 程序集的版本信息由下面四个值组成: 
 //

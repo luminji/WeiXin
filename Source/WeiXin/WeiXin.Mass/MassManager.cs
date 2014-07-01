@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using WeiXin.AccessToken;
 using WeiXin.Config;
+using WeiXin.GlobalReturnCode;
 using WeiXin.Utilitys;
 
 namespace WeiXin.Mass
@@ -16,31 +17,35 @@ namespace WeiXin.Mass
         /// 发送文本消息
         /// </summary>
         /// <param name="msg"></param>
-        public static void SendMassTextMessage(MassTextMessage msg)
+        public static void SendTextMessage(MassTextMessage msg)
         {
-            SendMassMessage(msg.GetJson());
+            SendMessage(msg.GetJson());
         }
-        private static void SendMassMessage(string json)
+        private static void SendMessage(string json)
         {
             Task t = new Task(() =>
             {
-                string token = WeinXinAccessTokenManager.GetToken();
-                string api = string.Format("{0}?access_token={1}", ConfigProperty.WeiXin_AdvancedMassApi, token);
+                string accessToken = null;
+                try
+                {
+                    accessToken = WeinXinAccessTokenManager.GetToken();
+                }
+                catch (Exception e)
+                {
+                    LogHelper.Log(string.Format("发送群发消息失败。\r\n错误消息：\r\n{1}", e.Message));
+                    LogHelper.LogError(e);
+                    return;
+                }
+                string api = string.Format("{0}?access_token={1}", ConfigProperty.WeiXin_AdvancedMassApi, accessToken);
                 LogHelper.LogWeiXinMessage(json);
                 try
                 {
-                    var result = HttpRequestHelper.PostHttp_ForamtByJson(api, json);
-                    if (!string.IsNullOrEmpty(result))
+                    LogHelper.LogWeiXinMessage(json);
+                    var resultJson = HttpRequestHelper.PostHttp_ForamtByJson(api, json);
+                    var returnCode = GlobalReturnCodeManager.GetReturnCode(resultJson);
+                    if (!returnCode.IsRequestSuccess)
                     {
-                        var jsonObj = JsonSerializerHelper.Deserialize(result);
-                        if (jsonObj.ContainsKey("errcode"))
-                        {
-                            var errcode = Convert.ToInt32(jsonObj["errcode"]);
-                            if (errcode > 0)
-                            {
-                                throw new Exception("result");
-                            }
-                        }
+                        LogHelper.LogWeiXinApiReturnCode("发送群发消息失败", returnCode.ErrCode, returnCode.Msg, returnCode.Json);
                     }
                 }
                 catch (PostHttpErrorException e)

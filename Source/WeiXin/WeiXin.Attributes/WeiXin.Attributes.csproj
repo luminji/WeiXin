@@ -46,14 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SendMessagePropertyIsChildAttribute.cs" />
-    <Compile Include="DataFieldAttribute.cs" />
     <Compile Include="JsonMsgTypeAttribute.cs" />
     <Compile Include="JsonPropertyAttribute.cs" />
     <Compile Include="MessageReflectionAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReplyMessageAttribute.cs" />
     <Compile Include="SendMessagePropertyAttribute.cs" />
-    <Compile Include="UniqueDataFieldAttribute.cs" />
     <Compile Include="WXMsgTypeAttribute.cs" />
   </ItemGroup>
   <ItemGroup>

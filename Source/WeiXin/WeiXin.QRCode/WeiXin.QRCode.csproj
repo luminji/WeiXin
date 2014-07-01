@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="QRCodeInfo.cs" />
     <Compile Include="QRCodeManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -53,9 +54,17 @@
       <Project>{ba48925e-e6b4-489c-969d-85cbb89d2d34}</Project>
       <Name>WeiXin.AccessToken</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WeiXin.Attributes\WeiXin.Attributes.csproj">
+      <Project>{fd72595f-bae8-436f-b4d6-2ea715ca7ba4}</Project>
+      <Name>WeiXin.Attributes</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WeiXin.Config\WeiXin.Config.csproj">
       <Project>{29374130-b9e8-4084-b116-ad03e4d3fcc6}</Project>
       <Name>WeiXin.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WeiXin.GlobalReturnCode\WeiXin.GlobalReturnCode.csproj">
+      <Project>{de0ed71c-10b8-40e6-bea4-a2df0531ec1f}</Project>
+      <Name>WeiXin.GlobalReturnCode</Name>
     </ProjectReference>
     <ProjectReference Include="..\WeiXin.Utilitys\WeiXin.Utilitys.csproj">
       <Project>{f7a31797-d3aa-45ce-b8a3-2eac2db0bd98}</Project>

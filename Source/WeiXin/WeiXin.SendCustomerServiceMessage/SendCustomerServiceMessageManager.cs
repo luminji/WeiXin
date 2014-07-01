@@ -20,8 +20,18 @@ namespace WeiXin.SendCustomerServiceMessage
         {
             Task t = new Task(() =>
             {
-                string token = WeinXinAccessTokenManager.GetToken();
-                string api = string.Format("{0}?access_token={1}", ConfigProperty.WeiXin_CustomerServiceApi, token);
+                string accessToken = null;
+                try
+                {
+                    accessToken = WeinXinAccessTokenManager.GetToken();
+                }
+                catch (Exception e)
+                {
+                    LogHelper.Log(string.Format("发送客服消息失败。\r\n错误消息：\r\n{1}", e.Message));
+                    LogHelper.LogError(e);
+                    return;
+                }
+                string api = string.Format("{0}?access_token={1}", ConfigProperty.WeiXin_CustomerServiceApi, accessToken);
                 LogHelper.LogWeiXinMessage(json);
                 try
                 {

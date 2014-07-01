@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using WeiXin.AccessToken;
 using WeiXin.Config;
+using WeiXin.GlobalReturnCode;
 using WeiXin.Utilitys;
 
 namespace WeiXin.UserManager
@@ -16,11 +17,21 @@ namespace WeiXin.UserManager
         public static List<string> GetUserList()
         {
             var result = new List<string>();
-            var accessToken = WeinXinAccessTokenManager.GetToken();
             var next_openid = string.Empty;
             var api = ConfigProperty.WeiXin_GetUserListApi;
             var total = 0;
             var readCount = 0;
+            string accessToken = null;
+            try
+            {
+                accessToken = WeinXinAccessTokenManager.GetToken();
+            }
+            catch (Exception e)
+            {
+                LogHelper.Log("获取已关注列表失败", e);
+                LogHelper.LogError(e);
+                throw new Exception(string.Format("获取已关注列表失败。\r\n错误消息：\r\n{1}", e.Message));
+            }
             do
             {
                 var url = string.Empty;
@@ -35,35 +46,48 @@ namespace WeiXin.UserManager
                 try
                 {
                     var json = HttpRequestHelper.GetHttp_ForamtByJson(url);
-                    var jsonObj = JsonSerializerHelper.Deserialize(json);
-                    total = Convert.ToInt32(jsonObj["total"]);
-                    var count = Convert.ToInt32(jsonObj["count"]);
-                    next_openid = Convert.ToString(jsonObj["next_openid"]);
-                    readCount += count;
-                    if (count > 0)
+                    var returnCode = GlobalReturnCodeManager.GetReturnCode(json);
+                    if (returnCode.IsRequestSuccess)
                     {
-                        var openids = (jsonObj["data"] as Dictionary<string, object>)["openid"];
-                        if (openids is ArrayList)
+                        var jsonObj = JsonSerializerHelper.Deserialize(json);
+                        total = Convert.ToInt32(jsonObj["total"]);
+                        var count = Convert.ToInt32(jsonObj["count"]);
+                        next_openid = Convert.ToString(jsonObj["next_openid"]);
+                        readCount += count;
+                        if (count > 0)
                         {
-                            foreach (var item in openids as ArrayList)
+                            var openids = (jsonObj["data"] as Dictionary<string, object>)["openid"];
+                            if (openids is ArrayList)
                             {
-                                result.Add(item.ToString());
+                                foreach (var item in openids as ArrayList)
+                                {
+                                    result.Add(item.ToString());
+                                }
+                            }
+                            else
+                            {
+                                LogHelper.Log("获取已关注列表转换 openid 类型失败，实际类型：" + openids.ToString());
                             }
                         }
-                        else
-                        {
-                            LogHelper.Log("获取已关注列表转换 openid 类型失败，实际类型：" + openids.ToString());
-                        }
+                    }
+                    else
+                    {
+                        LogHelper.LogWeiXinApiReturnCode("获取已关注列表失败", returnCode.ErrCode, returnCode.Msg, returnCode.Json);
+                        throw new Exception(string.Format("获取已关注列表失败。\r\nerrCode：{0}\r\n返回值说明：{1}\r\njson：{2}", returnCode.ErrCode, returnCode.Msg, returnCode.Json));
                     }
                 }
                 catch (PostHttpErrorException e)
                 {
-                    LogHelper.Log(string.Format("获取已关注列表失败，HTTP 状态码{0}", e.HttpStatusCode));
+                    var msg = string.Format("获取已关注列表失败，HTTP 状态码{0}", e.HttpStatusCode);
+                    LogHelper.Log(msg);
+                    throw new Exception(msg);
                 }
                 catch (Exception e)
                 {
+                    var msg = string.Format("获取已关注列表失败。\r\n错误消息：{1}", e.Message);
                     LogHelper.LogError(e);
-                    LogHelper.Log("获取已关注列表失败");
+                    LogHelper.Log(msg, e);
+                    throw new Exception(msg);
                 }
             } while (total > readCount);
             return result;
@@ -75,27 +99,46 @@ namespace WeiXin.UserManager
         /// <returns></returns>
         public static UserInfo GetUserInfo(string openId)
         {
-            if (!string.IsNullOrEmpty(openId))
+            string accessToken = null;
+            try
             {
-                try
+                accessToken = WeinXinAccessTokenManager.GetToken();
+            }
+            catch (Exception e)
+            {
+                LogHelper.Log("获取已关注用户信息失败", e);
+                LogHelper.LogError(e);
+                throw new Exception(string.Format("获取已关注用户信息失败。\r\n错误消息：\r\n{1}", e.Message));
+            }
+            try
+            {
+                var url = string.Format("{0}?access_token={1}&openid={2}&lang=zh_CN", ConfigProperty.WeiXin_GetUserInfoApi, accessToken, openId);
+                var json = HttpRequestHelper.GetHttp_ForamtByJson(url);
+                var returnCode = GlobalReturnCodeManager.GetReturnCode(json);
+                if (returnCode.IsRequestSuccess)
                 {
-                    var accessToken = WeinXinAccessTokenManager.GetToken();
-                    var url = string.Format("{0}?access_token={1}&openid={2}&lang=zh_CN", ConfigProperty.WeiXin_GetUserInfoApi, accessToken, openId);
-                    var json = HttpRequestHelper.GetHttp_ForamtByJson(url);
                     var userInfo = JsonSerializerHelper.ConvertJsonStringToObjectByJsonPropertyAttribute<UserInfo>(json);
                     return userInfo;
                 }
-                catch (PostHttpErrorException e)
+                else
                 {
-                    LogHelper.Log(string.Format("获取已关注列表失败，HTTP 状态码{0}", e.HttpStatusCode));
-                }
-                catch (Exception e)
-                {
-                    LogHelper.LogError(e);
-                    LogHelper.Log("获取已关注列表失败");
+                    LogHelper.LogWeiXinApiReturnCode("获取已关注用户信息失败", returnCode.ErrCode, returnCode.Msg, returnCode.Json);
                 }
             }
-            return null;
+            catch (PostHttpErrorException e)
+            {
+                var msg = string.Format("获取已关注用户信息失败，HTTP 状态码{0}", e.HttpStatusCode);
+                LogHelper.Log(msg);
+                throw new Exception(msg);
+            }
+            catch (Exception e)
+            {
+                var msg = string.Format("获取已关注用户信息失败。\r\n错误消息：{1}", e.Message);
+                LogHelper.LogError(e);
+                LogHelper.Log(msg, e);
+                throw new Exception(msg);
+            }
+            throw new Exception("获取已关注用户信息失败");
         }
     }
 }

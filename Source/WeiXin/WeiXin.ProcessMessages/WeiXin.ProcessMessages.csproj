@@ -66,17 +66,9 @@
       <Project>{29374130-b9e8-4084-b116-ad03e4d3fcc6}</Project>
       <Name>WeiXin.Config</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WeiXin.DAL\WeiXin.DAL.csproj">
-      <Project>{5bd5994b-2f8b-4733-a42f-9fdff2b431bc}</Project>
-      <Name>WeiXin.DAL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\WeiXin.Messages\WeiXin.Messages.csproj">
       <Project>{9f27bb1d-b6ed-4eec-b532-e422754bbce1}</Project>
       <Name>WeiXin.Messages</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WeiXin.Models\WeiXin.Models.csproj">
-      <Project>{32f8711a-8e49-4cbe-b3eb-883fd381cd1a}</Project>
-      <Name>WeiXin.Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\WeiXin.SendCustomerServiceMessage\WeiXin.SendCustomerServiceMessage.csproj">
       <Project>{878b4ead-395a-42a9-9564-6668d2de78cc}</Project>

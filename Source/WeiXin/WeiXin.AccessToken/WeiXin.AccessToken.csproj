@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="WeinXinAccessTokenManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WeiXinAccessToken.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="WeiXin.snk" />
@@ -56,13 +57,9 @@
       <Project>{29374130-b9e8-4084-b116-ad03e4d3fcc6}</Project>
       <Name>WeiXin.Config</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WeiXin.DAL\WeiXin.DAL.csproj">
-      <Project>{5bd5994b-2f8b-4733-a42f-9fdff2b431bc}</Project>
-      <Name>WeiXin.DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WeiXin.Models\WeiXin.Models.csproj">
-      <Project>{32f8711a-8e49-4cbe-b3eb-883fd381cd1a}</Project>
-      <Name>WeiXin.Models</Name>
+    <ProjectReference Include="..\WeiXin.GlobalReturnCode\WeiXin.GlobalReturnCode.csproj">
+      <Project>{de0ed71c-10b8-40e6-bea4-a2df0531ec1f}</Project>
+      <Name>WeiXin.GlobalReturnCode</Name>
     </ProjectReference>
     <ProjectReference Include="..\WeiXin.Utilitys\WeiXin.Utilitys.csproj">
       <Project>{f7a31797-d3aa-45ce-b8a3-2eac2db0bd98}</Project>

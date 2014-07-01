@@ -95,14 +95,6 @@ namespace WeiXin.Config
                 return _WeiXin_UpdateEnable;
             }
         }
-        private static string _DataBase_ConnectionString;
-        public static string DataBase_ConnectionString
-        {
-            get
-            {
-                return _DataBase_ConnectionString;
-            }
-        }
         static ConfigProperty()
         {
             ReadConfig();
@@ -135,7 +127,7 @@ namespace WeiXin.Config
                         XElement xmlElement = XElement.Load(fs);
                         XElement weiXinElement = xmlElement.Element("WeiXin");
                         XElement dataBaseElement = xmlElement.Element("DataBase");
-                        if (weiXinElement != null && dataBaseElement != null)
+                        if (weiXinElement != null)
                         {
                             #region 读取微信接口配置
                             var tokenElement = weiXinElement.Element("Token");
@@ -303,23 +295,6 @@ namespace WeiXin.Config
                                         _IsConfigurationOk = false;
                                         LogHelper.Log("WeiXin>UpdateEnable 配置错误");
                                     }
-                                }
-                            }
-                            #endregion
-                            #region 读取数据库配置
-                            var connectionStringElement = dataBaseElement.Element("ConnectionString");
-                            if (connectionStringElement == null)
-                            {
-                                _IsConfigurationOk = false;
-                                LogHelper.Log("缺少 DataBase>ConnectionString 配置");
-                            }
-                            else
-                            {
-                                _DataBase_ConnectionString = connectionStringElement.Value.Trim();
-                                if (string.IsNullOrEmpty(_DataBase_ConnectionString))
-                                {
-                                    _IsConfigurationOk = false;
-                                    LogHelper.Log("缺少 DataBase>ConnectionString 配置");
                                 }
                             }
                             #endregion

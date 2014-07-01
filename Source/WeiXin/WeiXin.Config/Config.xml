@@ -39,9 +39,4 @@
     -->
     <UpdateEnable>false</UpdateEnable>
   </WeiXin>
-  <!--数据库连接字符串-->
-  <DataBase>
-    <ConnectionString>
-    </ConnectionString>
-  </DataBase>
 </ApplicationConfig>

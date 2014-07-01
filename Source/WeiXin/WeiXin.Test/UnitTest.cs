@@ -10,7 +10,6 @@ namespace WeiXin.Test
         [TestMethod]
         public void TestMethod()
         {
-            var obj = WeiXinUserManager.GetUserInfo("oxhAYuPP7QcvPBq33dXs9f8Kvo2Y");
         }
     }
 }

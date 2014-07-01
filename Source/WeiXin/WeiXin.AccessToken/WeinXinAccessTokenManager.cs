@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using WeiXin.Config;
-using WeiXin.DAL;
-using WeiXin.Models;
+using WeiXin.GlobalReturnCode;
 using WeiXin.Utilitys;
 
 namespace WeiXin.AccessToken
@@ -13,14 +12,6 @@ namespace WeiXin.AccessToken
         public static string GetToken()
         {
             var isGetWeb = default(bool);
-            if (_AccessToken == null)
-            {
-                var list = new WeiXinAccessTokenDal().Read();
-                if (list != null && list.Count > 0)
-                {
-                    _AccessToken = list[0];
-                }
-            }
             if (_AccessToken != null)
             {
                 var seconds = (int)DateTime.Now.Subtract(_AccessToken.LastGetDatetime).TotalSeconds;
@@ -32,6 +23,7 @@ namespace WeiXin.AccessToken
             }
             if (isGetWeb)
             {
+                _AccessToken = null;
                 var webResult = GetWebToken();
                 if (webResult != null)
                 {
@@ -39,8 +31,11 @@ namespace WeiXin.AccessToken
                     _AccessToken.AccessToken = (string)webResult["access_token"];
                     _AccessToken.ExpiresIn = int.Parse(webResult["expires_in"].ToString());
                     _AccessToken.LastGetDatetime = DateTime.Now;
-                    new WeiXinAccessTokenDal().Save(_AccessToken);
                 }
+            }
+            if (_AccessToken == null)
+            {
+                throw new Exception("获取 AccessToken 失败");
             }
             return _AccessToken.AccessToken;
         }
@@ -50,8 +45,17 @@ namespace WeiXin.AccessToken
             try
             {
                 var json = HttpRequestHelper.GetHttp_ForamtByJson(url);
-                var jsonObj = JsonSerializerHelper.Deserialize(json);
-                return jsonObj;
+                var returnCode = GlobalReturnCodeManager.GetReturnCode(json);
+                if (returnCode.IsRequestSuccess)
+                {
+                    var jsonObj = JsonSerializerHelper.Deserialize(json);
+                    return jsonObj;
+                }
+                else
+                {
+                    LogHelper.LogWeiXinApiReturnCode("获取 access_token 失败", returnCode.ErrCode, returnCode.Msg, returnCode.Json);
+                    return null;
+                }
             }
             catch (PostHttpErrorException e)
             {
