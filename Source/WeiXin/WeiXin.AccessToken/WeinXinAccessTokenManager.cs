@@ -35,7 +35,7 @@ namespace WeiXin.AccessToken
             }
             if (_AccessToken == null)
             {
-                throw new Exception("获取 AccessToken 失败");
+                throw new Exception("获取 access_token 失败");
             }
             return _AccessToken.AccessToken;
         }

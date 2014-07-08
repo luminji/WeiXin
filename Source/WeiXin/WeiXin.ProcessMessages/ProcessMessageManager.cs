@@ -30,9 +30,6 @@ namespace WeiXin.ProcessMessages
             MessageFuncs.Add("6", Action6);
             MessageFuncs.Add("7", Action7);
             MessageFuncs.Add("8", Action8);
-            MessageFuncs.Add("9", Action9);
-            MessageFuncs.Add("10", Action10);
-            MessageFuncs.Add("11", Action11);
             MessageFuncs.Add("12", Action12);
 
             Processs = new Dictionary<MessageType, ProcessMessage>();
@@ -167,19 +164,7 @@ namespace WeiXin.ProcessMessages
         }
         private static string Action8(Message receiveMsg)
         {
-            return MessageManager.CreateTextMessageXml(receiveMsg.Xml, string.Format("<a href=\"http://58.215.139.6/testapi/test.html?openid={0}\">查看OpenId</a>", receiveMsg.FromUserName));
-        }
-        private static string Action9(Message receiveMsg)
-        {
-            return MessageManager.CreateTextMessageXml(receiveMsg.Xml, "源码地址：<a href=\"https://github.com/WangWenzhuang/WeiXin\">https://github.com/WangWenzhuang/WeiXin</a>");
-        }
-        private static string Action10(Message receiveMsg)
-        {
-            return MessageManager.CreateTextMessageXml(receiveMsg.Xml, "电子邮箱：1020304029@qq.com\r\nQQ：1020304029\r\n个人博客：<a href=\"http://www.wangwenzhuang.com/\">http://www.wangwenzhuang.com/</a>");
-        }
-        private static string Action11(Message receiveMsg)
-        {
-            return MessageManager.CreateTextMessageXml(receiveMsg.Xml, "任何个人或团体都可以无限制的任意使用此源码。如果您用此源码可以得到额外的收入，请随便打赏我一点，谢谢。支付宝：wangwenzhuang@live.com");
+            return MessageManager.CreateTextMessageXml(receiveMsg.Xml, string.Format("<a href=\"http://58.215.139.6/testwebsite/test/Index/{0}\">查看OpenId</a>", receiveMsg.FromUserName));
         }
         private static string Action12(Message receiveMsg)
         {

@@ -10,55 +10,64 @@
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Config.xml">
-      <publishTime>07/01/2014 14:44:30</publishTime>
+      <publishTime>07/07/2014 14:54:28</publishTime>
     </File>
     <File Include="bin/WeiXin.AccessToken.dll">
-      <publishTime>07/01/2014 14:44:42</publishTime>
+      <publishTime>07/08/2014 08:56:47</publishTime>
     </File>
     <File Include="bin/WeiXin.Attributes.dll">
-      <publishTime>07/01/2014 14:44:40</publishTime>
+      <publishTime>07/08/2014 08:56:45</publishTime>
     </File>
     <File Include="bin/WeiXin.Config.dll">
-      <publishTime>07/01/2014 14:44:41</publishTime>
+      <publishTime>07/08/2014 08:56:47</publishTime>
     </File>
     <File Include="bin/WeiXin.DAL.dll">
       <publishTime>06/30/2014 15:22:31</publishTime>
     </File>
     <File Include="bin/WeiXin.dll">
-      <publishTime>07/01/2014 14:44:43</publishTime>
+      <publishTime>07/08/2014 10:20:41</publishTime>
     </File>
     <File Include="bin/WeiXin.GlobalReturnCode.dll">
-      <publishTime>07/01/2014 14:44:42</publishTime>
+      <publishTime>07/08/2014 08:56:47</publishTime>
     </File>
     <File Include="bin/WeiXin.Messages.dll">
-      <publishTime>07/01/2014 14:44:42</publishTime>
+      <publishTime>07/08/2014 08:56:47</publishTime>
     </File>
     <File Include="bin/WeiXin.Models.dll">
       <publishTime>06/30/2014 15:22:30</publishTime>
     </File>
+    <File Include="bin/WeiXin.OAuth2AccessToken.dll">
+      <publishTime>07/08/2014 08:56:47</publishTime>
+    </File>
     <File Include="bin/WeiXin.ProcessMessages.dll">
-      <publishTime>07/01/2014 14:44:43</publishTime>
+      <publishTime>07/08/2014 10:20:41</publishTime>
     </File>
     <File Include="bin/WeiXin.SendCustomerServiceMessage.dll">
-      <publishTime>07/01/2014 14:44:42</publishTime>
+      <publishTime>07/08/2014 08:56:48</publishTime>
     </File>
     <File Include="bin/WeiXin.UserManager.dll">
-      <publishTime>07/01/2014 14:44:43</publishTime>
+      <publishTime>07/08/2014 08:56:48</publishTime>
     </File>
     <File Include="bin/WeiXin.Utilitys.dll">
-      <publishTime>07/01/2014 14:44:40</publishTime>
+      <publishTime>07/08/2014 08:56:46</publishTime>
     </File>
     <File Include="menu.json">
-      <publishTime>07/01/2014 09:19:03</publishTime>
+      <publishTime>07/08/2014 10:20:40</publishTime>
+    </File>
+    <File Include="oauth2.aspx">
+      <publishTime>07/07/2014 15:04:35</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>07/01/2014 14:44:53</publishTime>
+      <publishTime>07/08/2014 10:21:11</publishTime>
+    </File>
+    <File Include="test.aspx">
+      <publishTime>07/07/2014 14:52:52</publishTime>
     </File>
     <File Include="test.html">
       <publishTime>06/30/2014 08:17:28</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/01/2014 14:44:44</publishTime>
+      <publishTime>07/07/2014 15:00:28</publishTime>
     </File>
     <File Include="WeiXin.ashx">
       <publishTime>06/27/2014 17:37:18</publishTime>

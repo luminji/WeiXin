@@ -29,6 +29,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeiXin.Mass", "WeiXin.Mass\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeiXin.GlobalReturnCode", "WeiXin.GlobalReturnCode\WeiXin.GlobalReturnCode.csproj", "{DE0ED71C-10B8-40E6-BEA4-A2DF0531EC1F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeiXin.OAuth2AccessToken", "WeiXin.OAuth2AccessToken\WeiXin.OAuth2AccessToken.csproj", "{BC6DC2F7-8325-49E6-9307-1E636C64B34E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeiXin.Web", "WeiXin.Web\WeiXin.Web.csproj", "{07C18D5E-F001-4626-9E66-CBFF876912BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +91,14 @@ Global
 		{DE0ED71C-10B8-40E6-BEA4-A2DF0531EC1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE0ED71C-10B8-40E6-BEA4-A2DF0531EC1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE0ED71C-10B8-40E6-BEA4-A2DF0531EC1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC6DC2F7-8325-49E6-9307-1E636C64B34E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC6DC2F7-8325-49E6-9307-1E636C64B34E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC6DC2F7-8325-49E6-9307-1E636C64B34E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC6DC2F7-8325-49E6-9307-1E636C64B34E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07C18D5E-F001-4626-9E66-CBFF876912BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07C18D5E-F001-4626-9E66-CBFF876912BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07C18D5E-F001-4626-9E66-CBFF876912BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07C18D5E-F001-4626-9E66-CBFF876912BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

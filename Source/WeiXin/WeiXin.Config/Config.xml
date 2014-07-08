@@ -6,8 +6,10 @@
       cptbtptpbcptdtptp
     </Token>
     <AppId>
+      wx6ad04e0246dfd892
     </AppId>
     <AppSecret>
+      7251b243d5062981551b7de5f96f0e68
     </AppSecret>
     <!--客服消息接口-->
     <WeiXinCustomerServiceApi>
@@ -33,6 +35,7 @@
     <WeiXinAdvancedMassApi>
       https://api.weixin.qq.com/cgi-bin/message/mass/send
     </WeiXinAdvancedMassApi>
+    <WeiXinOAuth2AccessTokenApi>https://api.weixin.qq.com/sns/oauth2/access_token</WeiXinOAuth2AccessTokenApi>
     <!--更新配置，值：
     true：微信客户端所有操作会显示系统维护升级中
     false:正常使用

@@ -87,6 +87,14 @@ namespace WeiXin.Config
                 return _WeiXin_AdvancedMassApi;
             }
         }
+        private static string _WeiXin_OAuth2AccessTokenApi;
+        public static string WeiXin_OAuth2AccessTokenApi
+        {
+            get
+            {
+                return _WeiXin_OAuth2AccessTokenApi;
+            }
+        }
         private static bool _WeiXin_UpdateEnable;
         public static bool WeiXin_UpdateEnable
         {
@@ -271,6 +279,22 @@ namespace WeiXin.Config
                                 {
                                     _IsConfigurationOk = false;
                                     LogHelper.Log("缺少 WeiXin>WeiXinAdvancedMassApi 配置");
+                                }
+                            }
+
+                            var oAuth2AccessTokenApiElement = weiXinElement.Element("WeiXinOAuth2AccessTokenApi");
+                            if (oAuth2AccessTokenApiElement == null)
+                            {
+                                _IsConfigurationOk = false;
+                                LogHelper.Log("缺少 WeiXin>WeiXinOAuth2AccessTokenApi 配置");
+                            }
+                            else
+                            {
+                                _WeiXin_OAuth2AccessTokenApi = oAuth2AccessTokenApiElement.Value.Trim();
+                                if (string.IsNullOrEmpty(_WeiXin_OAuth2AccessTokenApi))
+                                {
+                                    _IsConfigurationOk = false;
+                                    LogHelper.Log("缺少 WeiXin>WeiXinOAuth2AccessTokenApi 配置");
                                 }
                             }
 
