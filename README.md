@@ -73,12 +73,16 @@
 
 ### 联系开发者 ###
 
+#### 王文壮 ####
+
 电子邮箱:1020304029@qq.com
 
 QQ:1020304029
 
+个人博客：[http://www.wangwenzhuang.com](http://www.wangwenzhuang.com)
+
+#### [naslover](https://github.com/naslover) ####
+
 电子邮箱:vvnaslover@gmail.com
 
 QQ:123343757
-
-个人博客：[http://www.wangwenzhuang.com](http://www.wangwenzhuang.com)
