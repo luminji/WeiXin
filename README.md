@@ -1,4 +1,4 @@
-微信公众账号开发
+﻿微信公众账号开发
 ======
 
 ### 说明 ###
@@ -76,5 +76,9 @@
 电子邮箱:1020304029@qq.com
 
 QQ:1020304029
+
+电子邮箱:vvnaslover@gmail.com
+
+QQ:123343757
 
 个人博客：[http://www.wangwenzhuang.com](http://www.wangwenzhuang.com)
