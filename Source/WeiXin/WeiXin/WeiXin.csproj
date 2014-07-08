@@ -59,6 +59,7 @@
   <ItemGroup>
     <Content Include="menu.json" />
     <None Include="Properties\PublishProfiles\default.pubxml" />
+    <None Include="Properties\PublishProfiles\ftp.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
