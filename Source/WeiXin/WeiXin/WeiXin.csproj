@@ -59,12 +59,14 @@
   <ItemGroup>
     <Content Include="menu.json" />
     <None Include="Properties\PublishProfiles\default.pubxml" />
+    <None Include="Properties\PublishProfiles\ftp.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="Properties\PublishProfiles\ftp.pubxml.user" />
     <Content Include="WeiXin.snk" />
     <Content Include="WeiXin.ashx" />
   </ItemGroup>
