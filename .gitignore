@@ -30,5 +30,9 @@ Source/WeiXin/WeiXin.Utilitys/obj
 Source/WeiXin/WeiXin.Web/bin
 Source/WeiXin/WeiXin.Web/obj
 Source/WeiXin/WeiXin.v12.suo
+<<<<<<< HEAD
 Source/WeiXin/WeiXin/Properties/PublishProfiles/ftp.pubxml
 Source/WeiXin/WeiXin/Properties/PublishProfiles/ftp.pubxml.user
+=======
+Source/WeiXin/WeiXin/Properties/PublishProfiles
+>>>>>>> origin/develop
