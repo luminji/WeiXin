@@ -4,5 +4,15 @@
 }
 
 <p>OpenId：@ViewBag.OpenId</p>
-<p>Code：@ViewBag.Code</p>
-
+@if (ViewBag.IsUserInfo)
+{
+    <p>nickname:@ViewBag.UserInfo.NickName</p>
+    <p>sex:@ViewBag.UserInfo.Sex</p>
+    <p>city:@ViewBag.UserInfo.City</p>
+    <p>province:@ViewBag.UserInfo.Province</p>
+    <p>country:@ViewBag.UserInfo.Country</p>
+    if (!string.IsNullOrEmpty(ViewBag.UserInfo.HeadImgUrl))
+    {
+        <img src="@ViewBag.UserInfo.HeadImgUrl" class="img-rounded" style="width:140px;height:140px;" />
+    }
+}

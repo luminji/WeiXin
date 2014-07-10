@@ -35,7 +35,14 @@
     <WeiXinAdvancedMassApi>
       https://api.weixin.qq.com/cgi-bin/message/mass/send
     </WeiXinAdvancedMassApi>
-    <WeiXinOAuth2AccessTokenApi>https://api.weixin.qq.com/sns/oauth2/access_token</WeiXinOAuth2AccessTokenApi>
+    <!--OAuth2.0 获取 access_token 接口-->
+    <WeiXinOAuth2AccessTokenApi>
+      https://api.weixin.qq.com/sns/oauth2/access_token
+    </WeiXinOAuth2AccessTokenApi>
+    <!--OAuth2.0 获取用户信息接口-->
+    <WeiXinOAuth2UserInfoApi>
+      https://api.weixin.qq.com/sns/userinfo
+    </WeiXinOAuth2UserInfoApi>
     <!--更新配置，值：
     true：微信客户端所有操作会显示系统维护升级中
     false:正常使用

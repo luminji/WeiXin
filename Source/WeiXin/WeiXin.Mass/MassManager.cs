@@ -28,7 +28,7 @@ namespace WeiXin.Mass
                 string accessToken = null;
                 try
                 {
-                    accessToken = WeinXinAccessTokenManager.GetToken();
+                    accessToken = WeiXinAccessTokenManager.GetToken();
                 }
                 catch (Exception e)
                 {

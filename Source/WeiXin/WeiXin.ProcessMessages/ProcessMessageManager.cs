@@ -30,6 +30,7 @@ namespace WeiXin.ProcessMessages
             MessageFuncs.Add("6", Action6);
             MessageFuncs.Add("7", Action7);
             MessageFuncs.Add("8", Action8);
+            MessageFuncs.Add("9", Action9);
             MessageFuncs.Add("12", Action12);
 
             Processs = new Dictionary<MessageType, ProcessMessage>();
@@ -165,6 +166,10 @@ namespace WeiXin.ProcessMessages
         private static string Action8(Message receiveMsg)
         {
             return MessageManager.CreateTextMessageXml(receiveMsg.Xml, string.Format("<a href=\"http://58.215.139.6/testwebsite/test/Index/{0}\">查看OpenId</a>", receiveMsg.FromUserName));
+        }
+        private static string Action9(Message receiveMsg)
+        {
+            return MessageManager.CreateTextMessageXml(receiveMsg.Xml, string.Format("OAuth2.0授权分两种，第一种获取获取 OpenId，不弹出授权界面；第二种弹出授权界面，不但能获取 OpenId，还可以获取用户的信息。\r\n<a href=\"https://open.weixin.qq.com/connect/oauth2/authorize?appid={0}&redirect_uri=http%3a%2f%2f58.215.139.6%2ftestwebsite%2foauth2%2fIndex&response_type=code&scope=snsapi_base&state=0#wechat_redirect\">第一种</a>\r\n<a href=\"https://open.weixin.qq.com/connect/oauth2/authorize?appid={0}&redirect_uri=http%3a%2f%2f58.215.139.6%2ftestwebsite%2foauth2%2fIndex&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect\">第二种</a>", ConfigProperty.WeiXin_AppId));
         }
         private static string Action12(Message receiveMsg)
         {

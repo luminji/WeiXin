@@ -64,14 +64,9 @@
             "name": "菜单三",
             "sub_button": [
 				{
-					"type": "view",
+					"type": "click",
 					"name": "OAuth2.0授权",
-					"url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx6ad04e0246dfd892&redirect_uri=http%3a%2f%2f58.215.139.6%2ftestwebsite%2foauth2%2fIndex&response_type=code&scope=snsapi_base&state=0#wechat_redirect"
-				},
-				{
-					"type": "view",
-					"name": "OAuth2.0授权",
-					"url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx6ad04e0246dfd892&redirect_uri=http%3a%2f%2f58.215.139.6%2ftestwebsite%2foauth2%2fIndex&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect"
+					"key":"9"
 				}
             ]
         }

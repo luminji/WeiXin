@@ -6,7 +6,7 @@ using WeiXin.Utilitys;
 
 namespace WeiXin.AccessToken
 {
-    public sealed class WeinXinAccessTokenManager
+    public sealed class WeiXinAccessTokenManager
     {
         private static WeiXinAccessToken _AccessToken;
         public static string GetToken()

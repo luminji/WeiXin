@@ -7,8 +7,8 @@
     <ProjectGuid>{BC6DC2F7-8325-49E6-9307-1E636C64B34E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WeiXin.OAuth2AccessToken</RootNamespace>
-    <AssemblyName>WeiXin.OAuth2AccessToken</AssemblyName>
+    <RootNamespace>WeiXin.OAuth2</RootNamespace>
+    <AssemblyName>WeiXin.OAuth2</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -46,12 +46,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WeinXinOAuth2AccessTokenManager.cs" />
+    <Compile Include="UserInfo.cs" />
+    <Compile Include="WeiXinOAuth2AccessToken.cs" />
+    <Compile Include="WeiXinOAuth2Manager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="WeiXin.snk" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WeiXin.Attributes\WeiXin.Attributes.csproj">
+      <Project>{fd72595f-bae8-436f-b4d6-2ea715ca7ba4}</Project>
+      <Name>WeiXin.Attributes</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WeiXin.Config\WeiXin.Config.csproj">
       <Project>{29374130-b9e8-4084-b116-ad03e4d3fcc6}</Project>
       <Name>WeiXin.Config</Name>
