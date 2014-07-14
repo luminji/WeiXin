@@ -11,6 +11,8 @@ namespace WeiXin.Web
     {
         protected void Application_Start()
         {
+            /*xxxx*/
+            
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
